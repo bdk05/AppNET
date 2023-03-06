@@ -171,11 +171,7 @@ namespace AppNET.Presentation.WinForm
 
         private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int id = Convert.ToInt32(txtProductId.Text);
-            //string name=txtProductName.Text;
-            //decimal price=Convert.ToDecimal(txtPrice.Text);
-            //int stok = Convert.ToInt32(txtStock.Text);
-            //int ctgry_id = Convert.ToInt32(txtCtgryId.Text);
+
 
             string id = grdProduct.CurrentRow.Cells["Id"].Value.ToString();
             string name = grdProduct.CurrentRow.Cells["Name"].Value.ToString();
