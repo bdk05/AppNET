@@ -171,8 +171,6 @@ namespace AppNET.Presentation.WinForm
 
         private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             string id = grdProduct.CurrentRow.Cells["Id"].Value.ToString();
             string name = grdProduct.CurrentRow.Cells["Name"].Value.ToString();
             string price = grdProduct.CurrentRow.Cells["Price"].Value.ToString();
