@@ -11,7 +11,11 @@ namespace AppNET.Domain.Entities
     {
         public string Name { get; set; }
         public int Stock { get; set; }
-        public decimal Price { get; set; }
+       // public decimal Price { get; set; }
+        public decimal BuyingPrice { get; set; }
+        public decimal SalePrice { get; set; }
+       
         public int CategoryId { get; set; }
+
     }
 }

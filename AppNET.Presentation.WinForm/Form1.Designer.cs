@@ -43,13 +43,15 @@
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
             this.save_urun = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCtgryId = new System.Windows.Forms.TextBox();
+            this.txtBuyingPrice = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
@@ -58,12 +60,21 @@
             this.ctxgrdProductMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.satis_yap = new System.Windows.Forms.Button();
+            this.txtAdet = new System.Windows.Forms.TextBox();
+            this.cbbUrun = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.grdKasa = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCategory)).BeginInit();
             this.ctxgrdCategoryMenu.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProduct)).BeginInit();
             this.ctxgrdProductMenu.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdKasa)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -190,28 +201,47 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.cbbCategory);
             this.groupBox2.Controls.Add(this.save_urun);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtCtgryId);
+            this.groupBox2.Controls.Add(this.txtBuyingPrice);
             this.groupBox2.Controls.Add(this.txtPrice);
             this.groupBox2.Controls.Add(this.txtStock);
             this.groupBox2.Controls.Add(this.txtProductName);
             this.groupBox2.Controls.Add(this.txtProductId);
-            this.groupBox2.Location = new System.Drawing.Point(497, 22);
+            this.groupBox2.Location = new System.Drawing.Point(431, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(374, 281);
+            this.groupBox2.Size = new System.Drawing.Size(374, 294);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Yeni Ürün";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(0, 229);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 15);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Category";
+            // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(83, 226);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(216, 23);
+            this.cbbCategory.TabIndex = 11;
+            // 
             // save_urun
             // 
-            this.save_urun.Location = new System.Drawing.Point(134, 237);
+            this.save_urun.Location = new System.Drawing.Point(246, 258);
             this.save_urun.Name = "save_urun";
             this.save_urun.Size = new System.Drawing.Size(112, 23);
             this.save_urun.TabIndex = 10;
@@ -224,9 +254,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(0, 197);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 15);
+            this.label8.Size = new System.Drawing.Size(70, 15);
             this.label8.TabIndex = 9;
-            this.label8.Text = "CategoryId";
+            this.label8.Text = "BuyingPrice";
             // 
             // label7
             // 
@@ -266,12 +296,13 @@
             this.label4.Text = "Id";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // txtCtgryId
+            // txtBuyingPrice
             // 
-            this.txtCtgryId.Location = new System.Drawing.Point(83, 197);
-            this.txtCtgryId.Name = "txtCtgryId";
-            this.txtCtgryId.Size = new System.Drawing.Size(216, 23);
-            this.txtCtgryId.TabIndex = 4;
+            this.txtBuyingPrice.Location = new System.Drawing.Point(83, 197);
+            this.txtBuyingPrice.Name = "txtBuyingPrice";
+            this.txtBuyingPrice.Size = new System.Drawing.Size(216, 23);
+            this.txtBuyingPrice.TabIndex = 4;
+            this.txtBuyingPrice.TextChanged += new System.EventHandler(this.txtCtgryId_TextChanged);
             // 
             // txtPrice
             // 
@@ -306,12 +337,12 @@
             this.grdProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdProduct.ContextMenuStrip = this.ctxgrdProductMenu;
-            this.grdProduct.Location = new System.Drawing.Point(403, 322);
+            this.grdProduct.Location = new System.Drawing.Point(383, 322);
             this.grdProduct.Name = "grdProduct";
             this.grdProduct.RowHeadersVisible = false;
             this.grdProduct.RowTemplate.Height = 25;
             this.grdProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdProduct.Size = new System.Drawing.Size(616, 323);
+            this.grdProduct.Size = new System.Drawing.Size(468, 323);
             this.grdProduct.TabIndex = 6;
             // 
             // ctxgrdProductMenu
@@ -336,11 +367,84 @@
             this.güncelleToolStripMenuItem.Text = "Güncelle";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.satis_yap);
+            this.groupBox3.Controls.Add(this.txtAdet);
+            this.groupBox3.Controls.Add(this.cbbUrun);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Location = new System.Drawing.Point(832, 22);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(401, 237);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
+            // 
+            // satis_yap
+            // 
+            this.satis_yap.Location = new System.Drawing.Point(258, 163);
+            this.satis_yap.Name = "satis_yap";
+            this.satis_yap.Size = new System.Drawing.Size(109, 38);
+            this.satis_yap.TabIndex = 4;
+            this.satis_yap.Text = "SATIŞ YAP";
+            this.satis_yap.UseVisualStyleBackColor = true;
+            this.satis_yap.Click += new System.EventHandler(this.satis_yap_Click);
+            // 
+            // txtAdet
+            // 
+            this.txtAdet.Location = new System.Drawing.Point(96, 80);
+            this.txtAdet.Name = "txtAdet";
+            this.txtAdet.Size = new System.Drawing.Size(189, 23);
+            this.txtAdet.TabIndex = 3;
+            // 
+            // cbbUrun
+            // 
+            this.cbbUrun.FormattingEnabled = true;
+            this.cbbUrun.Location = new System.Drawing.Point(97, 33);
+            this.cbbUrun.Name = "cbbUrun";
+            this.cbbUrun.Size = new System.Drawing.Size(188, 23);
+            this.cbbUrun.TabIndex = 2;
+            this.cbbUrun.SelectedIndexChanged += new System.EventHandler(this.cbbUrun_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 87);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 15);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Satıs Adedi";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(0, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 15);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Satılacak Ürün";
+            // 
+            // grdKasa
+            // 
+            this.grdKasa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdKasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdKasa.Location = new System.Drawing.Point(857, 280);
+            this.grdKasa.Name = "grdKasa";
+            this.grdKasa.RowHeadersVisible = false;
+            this.grdKasa.RowTemplate.Height = 25;
+            this.grdKasa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdKasa.Size = new System.Drawing.Size(376, 261);
+            this.grdKasa.TabIndex = 8;
+            this.grdKasa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdKasa_CellContentClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 762);
+            this.ClientSize = new System.Drawing.Size(1278, 762);
+            this.Controls.Add(this.grdKasa);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.grdProduct);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gridCategory);
@@ -359,6 +463,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProduct)).EndInit();
             this.ctxgrdProductMenu.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdKasa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,7 +487,7 @@
         private ToolStripMenuItem silToolStripMenuItem;
         private ToolStripMenuItem düzenleToolStripMenuItem;
         private GroupBox groupBox2;
-        private TextBox txtCtgryId;
+        private TextBox txtBuyingPrice;
         private TextBox txtPrice;
         private TextBox txtStock;
         private TextBox txtProductName;
@@ -395,5 +502,14 @@
         private ContextMenuStrip ctxgrdProductMenu;
         private ToolStripMenuItem silToolStripMenuItem1;
         private ToolStripMenuItem güncelleToolStripMenuItem;
+        private ComboBox cbbCategory;
+        private Label label9;
+        private GroupBox groupBox3;
+        private DataGridView grdKasa;
+        private Button satis_yap;
+        private TextBox txtAdet;
+        private ComboBox cbbUrun;
+        private Label label11;
+        private Label label10;
     }
 }

@@ -10,10 +10,12 @@ namespace AppNET.App
     public class CategoryService : ICategoryService
     {
         private readonly IRepository<Category> _repository;
+        private readonly IRepository<Product> _productRepository;
 
         public CategoryService()
         {
             _repository = IOCContainer.Resolve<IRepository<Category>>();
+            _productRepository = IOCContainer.Resolve<IRepository<Product>>();
         }
         public void Create(int id, string name)
         {
@@ -45,6 +47,20 @@ namespace AppNET.App
         public IReadOnlyCollection<Category> GetAll()
         {
             return _repository.GetList().ToList().AsReadOnly();
+        }
+
+        public Category GetAllByProducts(int id)
+        {
+            Category category = _repository.GetById(id);
+
+            var products = _productRepository.GetList(x => x.CategoryId == id).ToList();
+            category.Products = products;
+            return category;
+        }
+
+        public Category GetById(int id)
+        {
+            return _repository.GetList().FirstOrDefault(x=>x.Id==id);
         }
 
         public Category Update(int categoryId, string newCategoryName)

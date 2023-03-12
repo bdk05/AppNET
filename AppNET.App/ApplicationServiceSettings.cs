@@ -26,6 +26,10 @@ namespace AppNET.App
 
             IOCContainer.Register<IRepository<Product>>(()=>new TextFileRepository<Product>());
             IOCContainer.Register <IProductService>(() => new ProductService());
+
+            IOCContainer.Register<IRepository<Vault>>(()=>new TextFileRepository<Vault>());
+
+            IOCContainer.Register<ISalesService>(() => new SalesService());
         }
         public static IRepository<Category> Metot()
         {

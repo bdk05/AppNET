@@ -13,5 +13,7 @@ namespace AppNET.App
         bool Delete(int categoriId);
         IReadOnlyCollection<Category> GetAll();
         Category Update(int categoryId, string newCategoryName);
+        Category GetById(int id);
+        Category GetAllByProducts(int id);
     }
 }
